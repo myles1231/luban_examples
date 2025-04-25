@@ -39,4 +39,9 @@ local tables =
 {{~end~}}
 }
 
-return { enums = enums, beans = beans, tables = tables }
+local tablesbyname = {}
+for _,v in ipairs(tables) do
+    tablesbyname[v.name] = v
+end
+
+return { enums = enums, beans = beans, tables = tables, tablesbyname = tablesbyname }
